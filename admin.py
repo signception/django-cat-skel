@@ -16,4 +16,4 @@ class {{app_name|capfirst}}ItemAdmin(admin.ModelAdmin):
     ordering = ['order',]
     list_display = ('title', 'order',)
 
-admin.site.register(Project, ProjectAdmin)
+admin.site.register({{app_name|capfirst}}Item, {{app_name|capfirst}}ItemAdmin)

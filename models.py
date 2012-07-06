@@ -24,21 +24,21 @@ class {{app_name|capfirst}}Item(models.Model):
 
     order = models.IntegerField(default=0, blank=True)
 
-    def get_next_project(self):
+    def get_next(self):
         try:
-            return Project.objects.filter(order__gt=self.order).order_by('order')[0]
+            return {{app_name|capfirst}}Item.objects.filter(order__gt=self.order).order_by('order')[0]
         except IndexError:
             return None
 
-    def get_prev_project(self):
+    def get_prev(self):
         try:
-            return Project.objects.filter(order__lt=self.order).order_by('-order')[0]
+            return {{app_name|capfirst}}Item.objects.filter(order__lt=self.order).order_by('-order')[0]
         except IndexError:
             return None
 
     @permalink
     def get_absolute_url(self):
-        return 'projects_item', [self.id]
+        return '{{app_name}}_item', [self.id]
 
     def __unicode__(self):
         return self.title
