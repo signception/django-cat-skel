@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, url
-from django.views.generic.detail import DetailView
 
 from .models import *
 from .views import *
