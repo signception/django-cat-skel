@@ -10,7 +10,7 @@ class {{app_name|capfirst}}ItemListView(ListView):
     template_name = 'list.html'
 
     def get_queryset(self):
-        return super({{app_name|capfirst}}Item, self).get_queryset().order_by('order')
+        return super({{app_name|capfirst}}ItemListView, self).get_queryset().order_by('order')
 
 
 class {{app_name|capfirst}}ItemDetailView(DetailView):
