@@ -6,7 +6,6 @@ from .views import *
 urlpatterns = patterns('',
     url(r'^$', {{app_name|capfirst}}ItemListView.as_view()),
 
-    url(r'^(?P<pk>\d+)/$', {{app_name|capfirst}}ItemDetailView.as_view(model={{app_name|capfirst}}Item,
-        context_object_name='project'),
+    url(r'^(?P<pk>\d+)/$', {{app_name|capfirst}}ItemDetailView.as_view(),
         name='{{app_name}}_item')
 )
