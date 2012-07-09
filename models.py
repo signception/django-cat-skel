@@ -1,6 +1,6 @@
 #-*- coding: UTF-8 -*-
-from django.db.models import permalink
 import os
+from django.db.models import permalink
 from datetime import datetime
 from django.db import models
 from tinymce import models as tinymce_models
