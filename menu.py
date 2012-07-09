@@ -18,4 +18,4 @@ class {{app_name|capfirst}}Menu(CMSAttachMenu):
 
         return nodes
 
-menu_pool.register_menu(ResellMenu) # register the menu
+menu_pool.register_menu({{app_name|capfirst}}Menu) # register the menu
