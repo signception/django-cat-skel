@@ -1,8 +1,9 @@
 #-*- coding: UTF-8 -*-
 import os
-from django.db.models import permalink
 from datetime import datetime
+
 from django.db import models
+
 from tinymce import models as tinymce_models
 import pytils
 
@@ -36,7 +37,7 @@ class {{app_name|capfirst}}Item(models.Model):
         except IndexError:
             return None
 
-    @permalink
+    @models.permalink
     def get_absolute_url(self):
         return '{{app_name}}_item', [self.id]
 
