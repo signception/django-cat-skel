@@ -12,7 +12,7 @@ class {{app_name|capfirst}}Menu(CMSAttachMenu):
         nodes = []
 
         for item in {{app_name|capfirst}}Item.objects.all():
-            nodes.append(NavigationNode(item.address,
+            nodes.append(NavigationNode(item.title,
                                         item.get_absolute_url(),
                                         item.pk))
 
