@@ -8,7 +8,7 @@ from tinymce import models as tinymce_models
 import pytils
 
 
-def _create_image_path(_, filename):
+def _create_file_path(_, filename):
     now = datetime.now()
     date_path = now.strftime('{{app_name}}/%Y/%m/%d/')
     filename_slug = pytils.translit.translify(filename)
@@ -19,7 +19,7 @@ class {{app_name|capfirst}}Item(models.Model):
     title = models.CharField(max_length=100)
 
     # consider if you need only one image or multiple images
-    image = models.ImageField(upload_to=_create_image_path)
+    image = models.ImageField(upload_to=_create_file_path)
 
     description = tinymce_models.HTMLField(blank=True)
 
@@ -51,7 +51,7 @@ class {{app_name|capfirst}}Item(models.Model):
 
 class {{app_name|capfirst}}ItemImage(models.Model):
     {{app_name}}_item = models.ForeignKey({{app_name|capfirst}}Item, related_name='images')
-    image = models.ImageField(upload_to=_create_image_path)
+    image = models.ImageField(upload_to=_create_file_path)
 
     title = models.CharField(max_length=100)
     description = tinymce_models.HTMLField(blank=True)
